@@ -2,6 +2,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+            
+permissions:
+  contents: read   # デフォルトで必要（checkoutなど）
+  pages: write     # Pagesデプロイ用
+  id-token: write  # OIDCトークン取得用
 
 jobs:
   build-and-deploy:
